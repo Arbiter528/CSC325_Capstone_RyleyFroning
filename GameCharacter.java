@@ -1,3 +1,3 @@
 public interface GameCharacter {
-    public void walk();
+    public void run();
 }
