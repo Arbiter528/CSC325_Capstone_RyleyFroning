@@ -1,4 +1,6 @@
+
 import java.util.Random;
+
 
 public class Orc extends Thread implements GameCharacter {
     int health = 12;

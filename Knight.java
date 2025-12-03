@@ -1,11 +1,13 @@
+
 import java.util.Random;
 
-class Knight extends Thread implements GameCharacter {
+
+class Knight extends Thread implements Rng, GameCharacter {
     Random rand = new Random();
-    int health = 10;
-    int rng = rand.nextInt(15) + 1;
-    int gamerng = rand.nextInt(4) + 1;
-    int stamina = 10;
+    private int health = 10;
+    
+    //int gamerng = rand.nextInt(4) + 1;
+    private int stamina = 10;
     @Override
     public void run() {
         System.out.println("The brave Knight sets out on a quest to slay the dragon!");
@@ -13,6 +15,13 @@ class Knight extends Thread implements GameCharacter {
         try {
             for (int i = 1; i <= 5; i++) {
                 System.out.println("Knight: Step " + i);
+                //switch (i) {
+                   // case 1:
+
+                      //  fvrvrv
+                    //case 2:
+                  //  default:
+                //}
                 if (i == 1) {
                     System.out.println("Knight draws his sword, ready for battle!");
                         System.out.println("A goblin appears!");
@@ -44,8 +53,8 @@ class Knight extends Thread implements GameCharacter {
                         }
                 }
                 if (i == 4) {
-                    System.out.println("Knight draws his sword, ready for battle!");
-                        System.out.println("A goblin appears!");
+                    System.out.println("The knight encounters a Dragon!");
+                        System.out.println("The Knight gets the help of a wizard and a orc to defeat the dragon!");
                         if (rng <= stamina) {
                             System.out.println("Knight bravely defeats the goblin!");
                         } else {
