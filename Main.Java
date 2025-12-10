@@ -1,9 +1,14 @@
+import java.util.concurrent.CyclicBarrier;
+
 public class Main {
     public static void main(String[] args) {
-        Knight knight = new Knight();
-        Wizard wizard = new Wizard();
-        Orc orc = new Orc();
-        Dragon dragon = new Dragon();
+        // Create a barrier for 4 threads
+        CyclicBarrier barrier = new CyclicBarrier(4);
+        
+        Knight knight = new Knight(barrier);
+        Wizard wizard = new Wizard(barrier);
+        Orc orc = new Orc(barrier);
+        Dragon dragon = new Dragon(barrier);
 
         // Register the active dragon so characters can interact with it
         Dragon.activeDragon = dragon;
